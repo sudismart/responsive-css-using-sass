@@ -1,0 +1,383 @@
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow:inset $top $left $blur $color;
+    -moz-box-shadow:inset $top $left $blur $color;
+    box-shadow:inset $top $left $blur $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
+}
+//@mixin box-size
+
+@mixin pad-side(){
+  padding: 0 7vw;
+}
+
+@mixin phone{
+    @media only screen and (max-width: 480px){
+       @content;
+    }
+}
+@mixin tab{
+  @media only screen and (max-width: 1050px)and (min-width: 480px){
+    @content;
+  }
+}
+
+@mixin mobile-width($percent){
+    width: $percent;
+}
+
+@mixin profile-img(){
+    border-radius: 50%;
+    width:27px;
+    height:27px;
+    vertical-align: bottom;
+}
+
+@mixin shape($size,$color,$radius){
+  width: $size;
+  height: $size;
+  border-radius: $radius;
+  background-color: $color;
+}
+
+
+html,body,div,span,applet,object,iframe,h1,h2,
+h3,h4,h5,h6,p,blockquote,a,abbr,acronym,address,
+big,cite,del,dfn,em,img,ins,kbd,q,s,samp,small,
+strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,
+dd,ol,ul,li,fieldset,form,label,legend,table,caption,
+tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,
+embed,figure,figcaption,footer,header,input,menu,
+nav,output,ruby,section,summary,time,mark,audio,video {
+border: 0;
+margin: 0;
+padding: 0;
+  vertical-align: middle;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.red-boder-left{border-left: 4px solid #ff0000}
+.green-boder-left{border-left: 4px solid #00ff00}
+.yellow-boder-left{border-left: 4px solid #ff9900}
+
+
+body{
+  color: #666666;
+  background-color: #f7f9fc;
+  font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+.header{
+    @include pad-side();
+	position:fixed;
+	top	: 0;
+    padding-top:2vh;
+	width:100%;
+	height: 8vh;
+	border-bottom: 1px solid #e4e4e4;
+    background-color: #ffffff;
+	@include box-shadow(0px,1px,1px,#f4f4f4);
+
+    div{
+      display: inline-block;
+    }
+
+	#logo{
+        float:left;
+        p span{
+          font-size: 30px;
+          color: #f37a0b;
+        }
+	}
+    #header-stuff{
+        float: right;
+        #search{
+            width: 2vw;
+            margin: 5px 15px;
+        }
+        .notification{
+            width: 3vw;
+            position: relative;
+            .badges{
+                position: absolute;
+                top:-10px;
+                left: 10px;
+                color: #ffffff;
+                background-color: rgba(255,0,0,0.8);
+                padding:1px 3px;
+                font-size: 11px;
+            }
+
+        }
+        .profile{
+            vertical-align: baseline;
+            img{
+               @include profile-img();
+                margin-right: 10px;
+            }
+            span{
+              &:hover{cursor: pointer}
+            }
+            @include phone{
+                span{
+                    display: none;
+                }
+                img{
+                    margin-left: 10px;
+                    margin-right: 0px;
+                    &:hover{
+                        cursor: pointer;
+                    }
+                }
+
+            }
+        }
+    }
+
+}
+
+.sub-header{
+      height: 14vh;
+      margin-top: 8vh;
+      padding: 1vw 7vw;
+      border-bottom: 1px solid #f9f9f9;
+      background-color: #ffffff;
+      vertical-align: middle;
+      @include box-shadow(0px,1px,3px,#f4f4f4);
+      div{
+        display: inline-block;
+      }
+
+      .connections{
+          width: 30%;
+          .connections-dummy-icon{
+              @include profile-img();
+              border: 1px dashed #d3d3d3;
+              display: inline-block;
+              margin: 10px;
+              text-align: center;
+              padding: 2px;
+
+          }
+          .connections-icon{
+              @include profile-img();
+              &:hover{
+                cursor: pointer;
+              }
+              margin: 10px;
+              display: inline-block;
+          }
+          .more-connection{
+              text-align: center;
+              vertical-align: middle;
+              border: 1px solid rgba(0,247,0,0.8);
+              border-radius:49%;
+              width:38px;
+              height: 27px;
+              display: inline-block;
+              margin: 10px;
+              color:rgba(0,247,0,0.8);
+              padding: 2px;
+          }
+      }
+
+      .sub-header-heading{
+          width:45%;
+          text-align: center;
+          #bg-heading{
+              margin-bottom: 10px;
+          }
+          .red-bullet{
+              @include shape(10px,#ff0000,50%);
+              display: inline-block;
+              margin-right: 10px;
+          }
+          .orange-bullet{
+              @include shape(10px,#ffa500,50%);
+              display: inline-block;
+              margin-right: 10px;
+          }
+          span{ margin-right: 15px}
+
+      }
+
+      .sub-header-menu{
+          width:24%;
+          #menu-track{
+
+              width:17vw;
+              background-color: #f4f4f4;
+              border-radius: 20px;
+              padding: 5px 1vw;
+              margin-right: 1vw;
+              text-align:center;
+          }
+      }
+
+      @include phone{
+          height: auto;
+          .connections{
+              width: 100%;
+              border-bottom: 1px solid #f4f4f4;
+              box-shadow: 0px 1px 1px #f9f9f9;
+          }
+          .sub-header-heading{
+              width: 100%;
+              margin-top: 1vh;
+              border-bottom: 1px solid #f4f4f4;
+              box-shadow: 0px 1px 1px #f9f9f9;
+          }
+          .sub-header-menu{
+              width: 100%;
+              margin-top: 1vh;
+              #menu-track{
+                width:90%;
+              }
+          }
+      }
+    @include tab{
+        height: auto;
+        .connections{
+          max-width: 30%;
+        }
+        .sub-header-heading{
+          width: 50%;
+          margin-top: 1vh;
+        }
+        .sub-header-menu{
+          width: 100%;
+          margin-top: 2vh;
+          #menu-track{
+             width: 80vw;
+          }
+        }
+
+    }
+}
+
+.section{
+    padding: 5vh 7vw;
+    .block{
+        width :24%;
+        padding:0 2vw;
+        display: inline-block;
+        vertical-align: top;
+        .sub-block{
+            @include box-shadow(0px,1px,8px,#dddddd);
+            margin-bottom: 20px;
+            //padding: 10px;
+        }
+        .block-header{
+            @extend .sub-block;
+            color: #ffffff;
+            height: 50px;
+            padding: 15px;
+            vertical-align: middle;
+            p{
+                font-size: 13px;
+                font-weight: 500;
+                span{
+                    float: right;
+                }
+            }
+        }
+        #first{
+            background-color: #3385ff;
+        }
+        #second{
+            background-color: #ff9933;
+        }
+        #third{
+            background-color: #bb33ff;
+        }
+        #forth{
+            background-color: #00e68a;
+        }
+
+        .block-search{
+            @extend .sub-block;
+            color: #666666;
+            height: 50px;
+            padding: 15px;
+            background: #ffffff;
+            vertical-align: middle;
+            .bool{
+              display: none;
+                .right{
+                  color: #00ff00;;
+                }
+                .cross{
+                  color: #ff0000;
+                }
+            }
+            input{
+                width :75%;
+                border:0;
+                background: transparent;
+                &:focus{
+                  border: 0;
+                  outline: none;
+                }
+            }
+            input:focus + .bool{
+                display: inline;
+            }
+
+        }
+
+        .content-subBlock{
+            @extend .sub-block;
+            color: #666666;
+            padding: 10px;
+            background: #ffffff;
+            vertical-align: middle;
+            position: relative;
+            &:hover{
+                cursor: pointer;
+            }
+            .block-img{
+                float: left;
+                border-radius: 50%;
+                width:18px;
+                height:18px;
+                vertical-align: bottom;
+            }
+            span{
+                float:right;
+                position: absolute;
+                top: 25%;
+                left: 90%;
+            }
+            p{
+              width: 90%;
+              -ms-word-break: break-word;
+              word-break: break-word;
+              padding-left: 10%;
+              font-size: 12px;
+            }
+        }
+    }
+    @include phone{
+      .block{
+        width: 100%;
+      }
+    }
+    @include tab{
+      .block{
+        width: 49%;
+      }
+    }
+}

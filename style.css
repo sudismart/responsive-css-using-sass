@@ -1,0 +1,273 @@
+html, body, div, span, applet, object, iframe, h1, h2,
+h3, h4, h5, h6, p, blockquote, a, abbr, acronym, address,
+big, cite, del, dfn, em, img, ins, kbd, q, s, samp, small,
+strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt,
+dd, ol, ul, li, fieldset, form, label, legend, table, caption,
+tbody, tfoot, thead, tr, th, td, article, aside, canvas, details,
+embed, figure, figcaption, footer, header, input, menu,
+nav, output, ruby, section, summary, time, mark, audio, video {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.red-boder-left {
+  border-left: 4px solid #ff0000; }
+
+.green-boder-left {
+  border-left: 4px solid #00ff00; }
+
+.yellow-boder-left {
+  border-left: 4px solid #ff9900; }
+
+body {
+  color: #666666;
+  background-color: #f7f9fc;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; }
+
+.header {
+  padding: 0 7vw;
+  position: fixed;
+  top: 0;
+  padding-top: 2vh;
+  width: 100%;
+  height: 8vh;
+  border-bottom: 1px solid #e4e4e4;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0px 1px 1px #f4f4f4;
+  -moz-box-shadow: 0px 1px 1px #f4f4f4;
+  box-shadow: 0px 1px 1px #f4f4f4; }
+  .header div {
+    display: inline-block; }
+  .header #logo {
+    float: left; }
+    .header #logo p span {
+      font-size: 30px;
+      color: #f37a0b; }
+  .header #header-stuff {
+    float: right; }
+    .header #header-stuff #search {
+      width: 2vw;
+      margin: 5px 15px; }
+    .header #header-stuff .notification {
+      width: 3vw;
+      position: relative; }
+      .header #header-stuff .notification .badges {
+        position: absolute;
+        top: -10px;
+        left: 10px;
+        color: #ffffff;
+        background-color: rgba(255, 0, 0, 0.8);
+        padding: 1px 3px;
+        font-size: 11px; }
+    .header #header-stuff .profile {
+      vertical-align: baseline; }
+      .header #header-stuff .profile img {
+        border-radius: 50%;
+        width: 27px;
+        height: 27px;
+        vertical-align: bottom;
+        margin-right: 10px; }
+      .header #header-stuff .profile span:hover {
+        cursor: pointer; }
+      @media only screen and (max-width: 480px) {
+        .header #header-stuff .profile span {
+          display: none; }
+        .header #header-stuff .profile img {
+          margin-left: 10px;
+          margin-right: 0px; }
+          .header #header-stuff .profile img:hover {
+            cursor: pointer; } }
+
+.sub-header {
+  height: 14vh;
+  margin-top: 8vh;
+  padding: 1vw 7vw;
+  border-bottom: 1px solid #f9f9f9;
+  background-color: #ffffff;
+  vertical-align: middle;
+  -webkit-box-shadow: 0px 1px 3px #f4f4f4;
+  -moz-box-shadow: 0px 1px 3px #f4f4f4;
+  box-shadow: 0px 1px 3px #f4f4f4; }
+  .sub-header div {
+    display: inline-block; }
+  .sub-header .connections {
+    width: 30%; }
+    .sub-header .connections .connections-dummy-icon {
+      border-radius: 50%;
+      width: 27px;
+      height: 27px;
+      vertical-align: bottom;
+      border: 1px dashed #d3d3d3;
+      display: inline-block;
+      margin: 10px;
+      text-align: center;
+      padding: 2px; }
+    .sub-header .connections .connections-icon {
+      border-radius: 50%;
+      width: 27px;
+      height: 27px;
+      vertical-align: bottom;
+      margin: 10px;
+      display: inline-block; }
+      .sub-header .connections .connections-icon:hover {
+        cursor: pointer; }
+    .sub-header .connections .more-connection {
+      text-align: center;
+      vertical-align: middle;
+      border: 1px solid rgba(0, 247, 0, 0.8);
+      border-radius: 49%;
+      width: 38px;
+      height: 27px;
+      display: inline-block;
+      margin: 10px;
+      color: rgba(0, 247, 0, 0.8);
+      padding: 2px; }
+  .sub-header .sub-header-heading {
+    width: 45%;
+    text-align: center; }
+    .sub-header .sub-header-heading #bg-heading {
+      margin-bottom: 10px; }
+    .sub-header .sub-header-heading .red-bullet {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #ff0000;
+      display: inline-block;
+      margin-right: 10px; }
+    .sub-header .sub-header-heading .orange-bullet {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #ffa500;
+      display: inline-block;
+      margin-right: 10px; }
+    .sub-header .sub-header-heading span {
+      margin-right: 15px; }
+  .sub-header .sub-header-menu {
+    width: 24%; }
+    .sub-header .sub-header-menu #menu-track {
+      width: 17vw;
+      background-color: #f4f4f4;
+      border-radius: 20px;
+      padding: 5px 1vw;
+      margin-right: 1vw;
+      text-align: center; }
+  @media only screen and (max-width: 480px) {
+    .sub-header {
+      height: auto; }
+      .sub-header .connections {
+        width: 100%;
+        border-bottom: 1px solid #f4f4f4;
+        box-shadow: 0px 1px 1px #f9f9f9; }
+      .sub-header .sub-header-heading {
+        width: 100%;
+        margin-top: 1vh;
+        border-bottom: 1px solid #f4f4f4;
+        box-shadow: 0px 1px 1px #f9f9f9; }
+      .sub-header .sub-header-menu {
+        width: 100%;
+        margin-top: 1vh; }
+        .sub-header .sub-header-menu #menu-track {
+          width: 90%; } }
+  @media only screen and (max-width: 1050px) and (min-width: 480px) {
+    .sub-header {
+      height: auto; }
+      .sub-header .connections {
+        max-width: 30%; }
+      .sub-header .sub-header-heading {
+        width: 50%;
+        margin-top: 1vh; }
+      .sub-header .sub-header-menu {
+        width: 100%;
+        margin-top: 2vh; }
+        .sub-header .sub-header-menu #menu-track {
+          width: 80vw; } }
+
+.section {
+  padding: 5vh 7vw; }
+  .section .block {
+    width: 24%;
+    padding: 0 2vw;
+    display: inline-block;
+    vertical-align: top; }
+    .section .block .sub-block, .section .block .block-header, .section .block .block-search, .section .block .content-subBlock {
+      -webkit-box-shadow: 0px 1px 8px #dddddd;
+      -moz-box-shadow: 0px 1px 8px #dddddd;
+      box-shadow: 0px 1px 8px #dddddd;
+      margin-bottom: 20px; }
+    .section .block .block-header {
+      color: #ffffff;
+      height: 50px;
+      padding: 15px;
+      vertical-align: middle; }
+      .section .block .block-header p {
+        font-size: 13px;
+        font-weight: 500; }
+        .section .block .block-header p span {
+          float: right; }
+    .section .block #first {
+      background-color: #3385ff; }
+    .section .block #second {
+      background-color: #ff9933; }
+    .section .block #third {
+      background-color: #bb33ff; }
+    .section .block #forth {
+      background-color: #00e68a; }
+    .section .block .block-search {
+      color: #666666;
+      height: 50px;
+      padding: 15px;
+      background: #ffffff;
+      vertical-align: middle; }
+      .section .block .block-search .bool {
+        display: none; }
+        .section .block .block-search .bool .right {
+          color: #00ff00; }
+        .section .block .block-search .bool .cross {
+          color: #ff0000; }
+      .section .block .block-search input {
+        width: 75%;
+        border: 0;
+        background: transparent; }
+        .section .block .block-search input:focus {
+          border: 0;
+          outline: none; }
+      .section .block .block-search input:focus + .bool {
+        display: inline; }
+    .section .block .content-subBlock {
+      color: #666666;
+      padding: 10px;
+      background: #ffffff;
+      vertical-align: middle;
+      position: relative; }
+      .section .block .content-subBlock:hover {
+        cursor: pointer; }
+      .section .block .content-subBlock .block-img {
+        float: left;
+        border-radius: 50%;
+        width: 18px;
+        height: 18px;
+        vertical-align: bottom; }
+      .section .block .content-subBlock span {
+        float: right;
+        position: absolute;
+        top: 25%;
+        left: 90%; }
+      .section .block .content-subBlock p {
+        width: 90%;
+        -ms-word-break: break-word;
+        word-break: break-word;
+        padding-left: 10%;
+        font-size: 12px; }
+  @media only screen and (max-width: 480px) {
+    .section .block {
+      width: 100%; } }
+  @media only screen and (max-width: 1050px) and (min-width: 480px) {
+    .section .block {
+      width: 49%; } }
+
+/*# sourceMappingURL=style.css.map */
